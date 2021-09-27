@@ -12,7 +12,7 @@ class LeroySpider(scrapy.Spider):
     def __init__(self, search):
         super(LeroySpider, self).__init__()
         self.name_base = search
-        self.start_urls = [f'https://leroymerlin.ru/search/?q={search}&family=linoleum-201709&suggest=true']
+        self.start_urls = [f'https://leroymerlin.ru/search/?q={search}']
 
     def parse(self, response, **kwargs):
         ads_links = response.xpath("//div[@class='phytpj4_plp largeCard']/a/@href").getall()
